@@ -1,5 +1,7 @@
 /**
  * Module containing all Java files
+ * @author Ammar A
+ * @author Nikhil G
  */
 module com.gui.pizzamanagerproject4 {
     requires javafx.controls;

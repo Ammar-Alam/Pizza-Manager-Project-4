@@ -1,5 +1,10 @@
 package pizzaclasses;
 
+/**
+ * @author Ammar A
+ * @author Nikhil G
+ * @param <E>
+ */
 public interface Customizable<E> {
     /**
      * Adds an object

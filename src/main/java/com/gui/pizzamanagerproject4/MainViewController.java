@@ -5,6 +5,8 @@ import javafx.scene.control.Label;
 
 /**
  * Controller for Main View
+ * @author Ammar A
+ * @author Nikhil G
  */
 public class MainViewController {
     @FXML

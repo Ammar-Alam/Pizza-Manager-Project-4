@@ -1,5 +1,9 @@
 package pizzaclasses;
 
+/**
+ * @author Ammar A
+ * @author Nikhil G
+ */
 public class StoreOrders implements Customizable{
     /**
      * Adds an object

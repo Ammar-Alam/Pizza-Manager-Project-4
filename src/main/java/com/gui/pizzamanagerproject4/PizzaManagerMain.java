@@ -9,6 +9,8 @@ import java.io.IOException;
 
 /**
  * Class containing main method for app
+ * @author Ammar A
+ * @author Nikhil G
  */
 public class PizzaManagerMain extends Application {
     @Override
