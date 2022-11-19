@@ -59,6 +59,32 @@ public abstract class Pizza implements Customizable {
     }
 
     /**
+     * Constructor that can set crust and size
+     * @param crust Crust type
+     * @param size Pizza size
+     */
+    public Pizza(Crust crust, Size size) {
+        this.crust = crust;
+        this.size = size;
+    }
+
+    /**
+     * Constructor that sets crust
+     * @param crust Crust type
+     */
+    public Pizza(Crust crust) {
+        this.crust = crust;
+    }
+
+    /**
+     * Default constructor
+     */
+    public Pizza() {
+        this.size = Size.SMALL;
+        this.crust = Crust.THIN;
+    }
+
+    /**
      * Get crust type
      * @return Crust type
      */
@@ -89,5 +115,11 @@ public abstract class Pizza implements Customizable {
     public void setSize(Size size) {
         this.size = size;
     }
+
+    /**
+     * Returns number of toppings
+     * @return Int of toppings
+     */
+    public int numToppings() { return this.toppings.size();}
 }
 

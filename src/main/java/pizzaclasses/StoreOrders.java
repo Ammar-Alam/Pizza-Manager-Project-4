@@ -1,10 +1,16 @@
 package pizzaclasses;
 
+import java.util.ArrayList;
+
 /**
  * @author Ammar A
  * @author Nikhil G
  */
 public class StoreOrders implements Customizable{
+    /**
+     * List of orders
+     */
+    private ArrayList<Order> orders;
     /**
      * Adds an object
      *

@@ -11,7 +11,13 @@ public class ChicagoPizza implements PizzaFactory{
      */
     @Override
     public Pizza createDeluxe() {
-        return null;
+        Pizza newPizza = new Deluxe(Crust.DEEP_DISH);
+        newPizza.add(Topping.SAUSAGE);
+        newPizza.add(Topping.PEPPERONI);
+        newPizza.add(Topping.GREEN_PEPPER);
+        newPizza.add(Topping.ONION);
+        newPizza.add(Topping.MUSHROOM);
+        return newPizza;
     }
 
     /**
@@ -20,7 +26,12 @@ public class ChicagoPizza implements PizzaFactory{
      */
     @Override
     public Pizza createMeatzza() {
-        return null;
+        Pizza newPizza = new Meatzza(Crust.STUFFED);
+        newPizza.add(Topping.SAUSAGE);
+        newPizza.add(Topping.PEPPERONI);
+        newPizza.add(Topping.BEEF);
+        newPizza.add(Topping.HAM);
+        return newPizza;
     }
 
     /**
@@ -29,7 +40,12 @@ public class ChicagoPizza implements PizzaFactory{
      */
     @Override
     public Pizza createBBQChicken() {
-        return null;
+        Pizza newPizza = new BBQChicken(Crust.PAN);
+        newPizza.add(Topping.BBQ_CHICKEN);
+        newPizza.add(Topping.GREEN_PEPPER);
+        newPizza.add(Topping.PROVOLONE);
+        newPizza.add(Topping.CHEDDAR);
+        return newPizza;
     }
 
     /**
@@ -38,6 +54,6 @@ public class ChicagoPizza implements PizzaFactory{
      */
     @Override
     public Pizza createBuildYourOwn() {
-        return null;
+        return new BuildYourOwn(Crust.PAN);
     }
 }
