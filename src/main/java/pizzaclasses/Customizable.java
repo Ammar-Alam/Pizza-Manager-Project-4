@@ -3,7 +3,7 @@ package pizzaclasses;
 /**
  * @author Ammar A
  * @author Nikhil G
- * @param <E>
+ * Interface for customizable objects
  */
 public interface Customizable<E> {
     /**
