@@ -46,7 +46,7 @@ public class StoreOrders implements Customizable{
      * Exports store orders as a text file to public desktop
      * @return True if successful, false otherwise
      */
-    public boolean exportToFile(){
+    public boolean export(){
         String storeOrders = "Today's orders:\n";
         for(Order order : orders){
             storeOrders += order.toString() + "\n\n";
