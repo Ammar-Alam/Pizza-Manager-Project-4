@@ -1,6 +1,7 @@
 package pizzaclasses;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * @author Ammar A
@@ -121,5 +122,31 @@ public abstract class Pizza implements Customizable {
      * @return Int of toppings
      */
     public int numToppings() { return this.toppings.size();}
+
+    /**
+     * Equals method override
+     * @param o Object to compare
+     * @return Returns true if equal, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pizza pizza = (Pizza) o;
+        return this.toppings.equals(pizza.toppings) && this.crust == pizza.crust && this.size == pizza.size;
+    }
+
+    /**
+     * String form of Pizza
+     * @return
+     */
+    @Override
+    public String toString() {
+        String output = size.getSize() + " " + crust.getCrustType() + " with :";
+        for(Topping topping : toppings){
+            output += topping.getTopping() + "\n\t";
+        }
+        return output + "\n";
+    }
 }
 
