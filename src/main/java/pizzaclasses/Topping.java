@@ -58,4 +58,10 @@ public enum Topping {
     Topping(String topping) {
         this.topping = topping;
     }
+
+    /**
+     * Returns string form of topping
+     * @return Topping
+     */
+    public String getTopping(){return this.topping;}
 }

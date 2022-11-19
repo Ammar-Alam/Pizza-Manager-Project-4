@@ -29,4 +29,9 @@ public enum Size {
     Size(String size){
         this.size = size;
     }
+
+    /**
+     * Returns string form of size
+     */
+    public String getSize() {return this.size;}
 }
