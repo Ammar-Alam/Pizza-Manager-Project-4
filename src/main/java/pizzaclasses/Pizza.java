@@ -23,7 +23,7 @@ public abstract class Pizza implements Customizable {
     /**
      * Maximum number of toppings any pizza can have
      */
-    public static final int MAX_TOPPINGS = 7;
+    private static final int MAX_TOPPINGS = 7;
 
     /**
      * Gives price of Pizza
