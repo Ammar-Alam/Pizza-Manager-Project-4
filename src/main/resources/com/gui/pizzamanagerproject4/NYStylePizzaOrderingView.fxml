@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.pizzamanagerproject4.NYStylePizzaOrderingController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" prefHeight="17.0" prefWidth="601.0" text="New York Style Pizza" textFill="#b92b2b" underline="true">
@@ -28,10 +27,10 @@
             <Image url="@../../../images/nyStylePizzaDisplay.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="pizzaFlavorSelection" layoutX="21.0" layoutY="50.0" prefWidth="150.0" promptText="Select Flavor" />
+      <ComboBox fx:id="pizzaFlavorSelection" layoutX="21.0" layoutY="50.0" onAction="#updateFlavor" prefWidth="150.0" promptText="Select Flavor" />
       <HBox layoutX="187.0" layoutY="50.0" prefHeight="25.0" prefWidth="217.0">
          <children>
-            <RadioButton fx:id="smallCrust" mnemonicParsing="false" selected="true" text="Small">
+            <RadioButton fx:id="smallCrust" mnemonicParsing="false" onAction="#sizeChanged" selected="true" text="Small">
                <toggleGroup>
                   <ToggleGroup fx:id="size" />
                </toggleGroup>
@@ -39,12 +38,12 @@
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding>
             </RadioButton>
-            <RadioButton fx:id="medCrust" mnemonicParsing="false" text="Medium" toggleGroup="$size">
+            <RadioButton fx:id="medCrust" mnemonicParsing="false" onAction="#sizeChanged" text="Medium" toggleGroup="$size">
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding>
             </RadioButton>
-            <RadioButton fx:id="largeCrust" mnemonicParsing="false" text="Large" toggleGroup="$size">
+            <RadioButton fx:id="largeCrust" mnemonicParsing="false" onAction="#sizeChanged" text="Large" toggleGroup="$size">
                <padding>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding>
@@ -58,7 +57,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <TextField fx:id="crustTypeDisplay">
+            <TextField fx:id="crustTypeDisplay" editable="false">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -82,17 +81,28 @@
       </VBox>
       <VBox layoutX="187.0" layoutY="213.0" prefHeight="64.0" prefWidth="44.0">
          <children>
-            <Button mnemonicParsing="false" text="&gt;&gt;">
+            <Button fx:id="addToppingButton" mnemonicParsing="false" onAction="#addTopping" text="&gt;&gt;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Button>
-            <Button mnemonicParsing="false" text="&lt;&lt;">
+            <Button fx:id="removeToppingButton" mnemonicParsing="false" onAction="#removeTopping" text="&lt;&lt;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Button>
          </children>
       </VBox>
+      <Button fx:id="addToOrderButton" layoutX="430.0" layoutY="265.0" mnemonicParsing="false" onAction="#addToOrder" text="Add Pizza To Order" />
+      <HBox layoutX="390.0" layoutY="310.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Price:">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="priceBox" editable="false" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
