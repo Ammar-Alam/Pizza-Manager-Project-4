@@ -1,6 +1,7 @@
 package pizzaclasses;
 
 /**
+ * NY Pizza Factory Class
  * @author Ammar A
  * @author Nikhil G
  */

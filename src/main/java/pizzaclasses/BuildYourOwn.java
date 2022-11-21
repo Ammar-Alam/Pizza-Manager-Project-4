@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Build your own flavor pizza
  * @author Ammar A
  * @author Nikhil G
- * Build your own flavor pizza
  */public class BuildYourOwn extends Pizza{
     /**
      * Small BYO Pizza Price

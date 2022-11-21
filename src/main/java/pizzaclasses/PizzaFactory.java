@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Interface that contains methods for creating the 4 types of pizzas
  * @author Ammar A
  * @author Mikhil G
- * Interface that contains methods for creating the 4 types of pizzas
  */
 public interface PizzaFactory {
     /**

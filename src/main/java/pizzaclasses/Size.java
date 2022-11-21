@@ -1,8 +1,8 @@
 package pizzaclasses;
 /**
+ * Enum containing pizza sizes
  * @author Ammar A
  * @author Nikhil G
- * Enum containing pizza sizes
  */
 public enum Size {
     /**

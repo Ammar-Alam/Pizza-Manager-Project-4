@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Deluxe flavor pizza
  * @author Ammar A
  * @author Nikhil G
- * Deluxe flavor pizza
  */public class Deluxe extends Pizza{
     /**
      * Small Deluxe Pizza Price

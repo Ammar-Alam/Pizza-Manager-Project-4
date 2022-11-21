@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Enum for crust types
  * @author Ammar A
  * @author Nikhil G
- * Enum for crust types
  */
 public enum Crust {
     /**

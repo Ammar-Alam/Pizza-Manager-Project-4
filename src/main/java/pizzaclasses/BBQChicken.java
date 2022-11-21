@@ -1,10 +1,11 @@
 package pizzaclasses;
 
 /**
+ * BBQ Chicken flavor pizza
  * @author Ammar A
  * @author Nikhil G
- * BBQ Chicken flavor pizza
- */public class BBQChicken extends Pizza{
+ */
+public class BBQChicken extends Pizza{
     /**
      * Small BBQChicken Pizza Price
      */

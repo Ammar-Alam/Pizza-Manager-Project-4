@@ -3,6 +3,7 @@ package pizzaclasses;
 import java.util.ArrayList;
 
 /**
+ * Pizza abstract class
  * @author Ammar A
  * @author Nikhil G
  */

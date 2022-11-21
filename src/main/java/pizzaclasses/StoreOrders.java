@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
+ * Store orders object
  * @author Ammar A
  * @author Nikhil G
  */

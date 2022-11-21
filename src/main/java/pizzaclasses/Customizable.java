@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Interface for customizable objects
  * @author Ammar A
  * @author Nikhil G
- * Interface for customizable objects
  */
 public interface Customizable<E> {
     /**

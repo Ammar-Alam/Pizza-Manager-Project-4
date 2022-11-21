@@ -3,6 +3,7 @@ package pizzaclasses;
 import java.util.ArrayList;
 
 /**
+ * Order object class
  * @author Ammar A
  * @author Nikhil G
  */

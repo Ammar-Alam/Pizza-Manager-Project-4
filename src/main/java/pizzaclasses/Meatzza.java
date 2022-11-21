@@ -1,9 +1,9 @@
 package pizzaclasses;
 
 /**
+ * Meatzza flavor pizza
  * @author Ammar A
  * @author Nikhil G
- * Meatzza flavor pizza
  */
 public class Meatzza extends Pizza{
     /**

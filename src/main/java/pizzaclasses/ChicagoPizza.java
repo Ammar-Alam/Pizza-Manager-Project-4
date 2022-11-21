@@ -1,6 +1,7 @@
 package pizzaclasses;
 
 /**
+ * Chicago pizza object
  * @author Ammar A
  * @author Nikhil G
  */

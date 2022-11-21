@@ -1,11 +1,9 @@
 package pizzaclasses;
 
-import java.util.ArrayList;
-
 /**
+ * Enum containing pizza toppings
  * @author Ammar A
  * @author Nikhil G
- * Enum containing pizza toppings
  */
 public enum Topping {
     /**
