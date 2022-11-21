@@ -24,7 +24,7 @@
         </Label>
         <ImageView fitHeight="171.0" fitWidth="171.0" layoutX="404.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../images/chicagoSylePizzaDisplay.jpg" />
+                <Image url="@../../../images/chicagoSylePizzaCustom.jpg" />
             </image>
         </ImageView>
         <ComboBox fx:id="pizzaFlavorSelection" layoutX="21.0" layoutY="50.0" onAction="#updateFlavor" prefWidth="150.0" promptText="Select Flavor" />
