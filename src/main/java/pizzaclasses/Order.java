@@ -1,7 +1,6 @@
 package pizzaclasses;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * @author Ammar A
@@ -15,7 +14,7 @@ public class Order implements Customizable{
     /**
      * List of pizzas to order
      */
-    private ArrayList<Pizza> orderItems;
+    private ArrayList<Pizza> orderItems = new ArrayList<>();
 
     /**
      * Constructor for order
@@ -90,9 +89,9 @@ public class Order implements Customizable{
      */
     @Override
     public String toString() {
-        String output = "Order number " + orderNum;
+        String output = "Order number " + orderNum + "\n";
         for(Pizza pizza : orderItems){
-            output += "\t" + pizza.toString();
+            output += "\t" + pizza.toString() + "--------------------------------------------------\n";
         }
         return output;
     }
