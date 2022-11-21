@@ -12,7 +12,7 @@ public class StoreOrders implements Customizable{
     /**
      * List of orders
      */
-    private ArrayList<Order> orders;
+    private ArrayList<Order> orders = new ArrayList<>();
     /**
      * Adds an object
      *
@@ -39,7 +39,8 @@ public class StoreOrders implements Customizable{
      * @return Return order number
      */
     public int getNextOrderNumber(){
-        return orders.size();
+        if(!orders.isEmpty()) return orders.size();
+        return 0;
     }
 
     /**
