@@ -43,12 +43,13 @@ public class BuildYourOwn extends Pizza{
         double toppingsCost = TOPPING_COST * this.numToppings();
         switch (this.getSize()){
             case SMALL:
-                return BYO_SMALL_PRICE;
+                return BYO_SMALL_PRICE + toppingsCost;
             case MEDIUM:
-                return BYO_MED_PRICE;
+                return BYO_MED_PRICE + toppingsCost;
             case LARGE:
-                return BYO_LARGE_PRICE;
+                return BYO_LARGE_PRICE + toppingsCost;
         }
-        return BYO_SMALL_PRICE;
+        return BYO_SMALL_PRICE + toppingsCost;
     }
+
 }
