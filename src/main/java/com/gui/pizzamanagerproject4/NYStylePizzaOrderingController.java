@@ -200,7 +200,8 @@ public class NYStylePizzaOrderingController implements Initializable {
         resetToppings();
         switch (pizzaFlavorSelection.getSelectionModel().getSelectedItem()){
             case "Build your own" -> {
-                displayPizza.setImage(new Image("@../../../images/nyStylePizzaCustom.jpg"));
+                Image image = new Image(getClass().getResourceAsStream("/images/nyStylePizzaCustom.jpg"));
+                displayPizza.setImage(image);
                 availableToppings.setDisable(false);
                 selectedToppings.setDisable(false);
                 addToppingButton.setDisable(false);
@@ -220,7 +221,8 @@ public class NYStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setBBQChicken(){
-        displayPizza.setImage(new Image("@../../../images/nyStylePizzaBBQ.jpg"));
+        Image image = new Image(getClass().getResourceAsStream("/images/nyStylePizzaBBQ.jpg"));
+        displayPizza.setImage(image);
         crustTypeDisplay.setText(Crust.THIN.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.BBQ_CHICKEN.getTopping());
@@ -243,7 +245,8 @@ public class NYStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setMeatzza(){
-        displayPizza.setImage(new Image("@../../../images/nyStylePizzaMeatzza.jpg"));
+        Image image = new Image(getClass().getResourceAsStream("/images/nyStylePizzaMeatzza.jpg"));
+        displayPizza.setImage(image);
         crustTypeDisplay.setText(Crust.HAND_TOSSED.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.SAUSAGE.getTopping());
@@ -266,7 +269,8 @@ public class NYStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setDeluxe(){
-        displayPizza.setImage(new Image("@../../../images/nyStylePizzaDeluxe.jpg"));
+        Image image = new Image(getClass().getResourceAsStream("/images/nyStylePizzaDeluxe.jpg"));
+        displayPizza.setImage(image);
         crustTypeDisplay.setText(Crust.BROOKLYN.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.SAUSAGE.getTopping());
