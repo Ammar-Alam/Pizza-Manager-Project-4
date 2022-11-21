@@ -22,7 +22,7 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <ImageView fitHeight="171.0" fitWidth="171.0" layoutX="404.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="displayPizza" fitHeight="171.0" fitWidth="171.0" layoutX="404.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../images/chicagoSylePizzaCustom.jpg" />
             </image>
