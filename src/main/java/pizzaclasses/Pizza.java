@@ -1,7 +1,6 @@
 package pizzaclasses;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * @author Ammar A
@@ -146,7 +145,7 @@ public abstract class Pizza implements Customizable {
 
     /**
      * String form of Pizza
-     * @return
+     * @return String form of Pizza
      */
     @Override
     public String toString() {

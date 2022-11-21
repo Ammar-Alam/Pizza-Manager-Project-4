@@ -1,5 +1,10 @@
 package pizzaclasses;
 
+/**
+ * @author Ammar A
+ * @author Nikhil G
+ * Meatzza flavor pizza
+ */
 public class Meatzza extends Pizza{
     /**
      * Small Meatzza Pizza Price

@@ -23,6 +23,9 @@ public class Order implements Customizable{
      * Value of added sales tax only
      */
     private double tax = 0.0;
+    /**
+     * Percentage tax charged
+     */
     private static final double TAXRATE = 0.06625;
 
     /**

@@ -32,6 +32,7 @@ public enum Size {
 
     /**
      * Returns string form of size
+     * @return String form of size
      */
     public String getSize() {return this.size;}
 }
