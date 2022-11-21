@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pizzaclasses.StoreOrders;
 
 import java.io.IOException;
 
@@ -15,9 +14,10 @@ import java.io.IOException;
  */
 public class PizzaManagerMain extends Application {
     /**
-     * Store orders object
+     * Start method for GUI
+     * @param stage Stage
+     * @throws IOException Exception
      */
-    public static StoreOrders storeOrders = new StoreOrders();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
@@ -28,6 +28,10 @@ public class PizzaManagerMain extends Application {
         stage.show();
     }
 
+    /**
+     * Main method
+     * @param args Args
+     */
     public static void main(String[] args) {
         launch();
     }
