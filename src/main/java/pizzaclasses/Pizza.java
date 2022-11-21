@@ -11,7 +11,7 @@ public abstract class Pizza implements Customizable {
     /**
      * List of toppings
      */
-    private ArrayList<Topping> toppings;
+    private ArrayList<Topping> toppings = new ArrayList<>();
     /**
      * Crust type
      */
@@ -137,14 +137,27 @@ public abstract class Pizza implements Customizable {
     }
 
     /**
+     * Getter for toppings
+     * @return ArrayList of toppings
+     */
+    public ArrayList<Topping> getToppings() {
+        return toppings;
+    }
+
+    /**
      * String form of Pizza
      * @return
      */
     @Override
     public String toString() {
-        String output = size.getSize() + " " + crust.getCrustType() + " with :";
-        for(Topping topping : toppings){
-            output += topping.getTopping() + "\n\t";
+        String output = size.getSize() + " " + crust.getCrustType() + " Pizza";
+        if(!toppings.isEmpty()) {
+            output += " with:\n\t";
+            for (Topping topping : toppings) {
+                output += topping.getTopping() + "\n\t";
+            }
+        } else {
+            output += "\n";
         }
         return output + "\n";
     }
