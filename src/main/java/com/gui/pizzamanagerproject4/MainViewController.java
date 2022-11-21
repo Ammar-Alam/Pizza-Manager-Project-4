@@ -2,7 +2,17 @@ package com.gui.pizzamanagerproject4;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import pizzaclasses.Order;
+import pizzaclasses.Pizza;
+import pizzaclasses.StoreOrders;
+
+import static com.gui.pizzamanagerproject4.PizzaManagerMain.storeOrders;
 
 /**
  * Controller for Main View
@@ -10,6 +20,11 @@ import javafx.scene.control.Button;
  * @author Nikhil G
  */
 public class MainViewController {
+
+    /**
+     * Current order variable
+     */
+    private static Order myOrder = new Order(storeOrders.getNextOrderNumber());
 
     /**
      * Button to order Chicago style pizza
@@ -41,6 +56,19 @@ public class MainViewController {
      */
     @FXML
     void orderChicagoPizza(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("ChicagoStylePizzaOrderingView.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Order A Chicago Pizza");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root1, 600, 400));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+            return;
+        }
     }
 
     /**
@@ -49,6 +77,19 @@ public class MainViewController {
      */
     @FXML
     void orderNYPizza(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("NYStylePizzaOrderingView.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Order A New York Pizza");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root1, 600, 400));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+            return;
+        }
     }
 
     /**
@@ -57,6 +98,20 @@ public class MainViewController {
      */
     @FXML
     void viewOrder(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("CurrentOrderView.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Current Order");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root1, 600, 400));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            CurrentOrderController orderController = fxmlLoader.getController();
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+            return;
+        }
     }
 
     /**
@@ -65,6 +120,36 @@ public class MainViewController {
      */
     @FXML
     void viewStoreOrders(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("StoreOrdersView.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Store Orders");
+            stage.setResizable(false);
+            stage.setScene(new Scene(root1, 600, 400));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e){
+            e.printStackTrace();
+            return;
+        }
+    }
+
+    /**
+     * Adds a pizza to the current order
+     * @param pizza Pizza to add
+     */
+    void addToOrder(Pizza pizza){
+        myOrder.add(pizza);
+        System.out.println(myOrder.toString());
+    }
+
+    /**
+     * Adds myOrder to the store orders and resets myOrder
+     */
+    void submitOrder(){
+        storeOrders.add(myOrder);
+        myOrder = new Order(storeOrders.getNextOrderNumber());
     }
 
 }
