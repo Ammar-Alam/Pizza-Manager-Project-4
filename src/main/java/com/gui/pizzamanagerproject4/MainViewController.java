@@ -12,8 +12,6 @@ import pizzaclasses.Order;
 import pizzaclasses.Pizza;
 import pizzaclasses.StoreOrders;
 
-import static com.gui.pizzamanagerproject4.PizzaManagerMain.storeOrders;
-
 /**
  * Controller for Main View
  * @author Ammar A
@@ -21,6 +19,10 @@ import static com.gui.pizzamanagerproject4.PizzaManagerMain.storeOrders;
  */
 public class MainViewController {
 
+    /**
+     * Store orders variable
+     */
+    private static StoreOrders storeOrders = new StoreOrders();
     /**
      * Current order variable
      */
@@ -107,6 +109,7 @@ public class MainViewController {
             stage.setScene(new Scene(root1, 600, 400));
             stage.initModality(Modality.APPLICATION_MODAL);
             CurrentOrderController orderController = fxmlLoader.getController();
+            orderController.getOrder(myOrder);
             stage.show();
         } catch (Exception e){
             e.printStackTrace();
@@ -141,7 +144,6 @@ public class MainViewController {
      */
     void addToOrder(Pizza pizza){
         myOrder.add(pizza);
-        System.out.println(myOrder.toString());
     }
 
     /**
@@ -150,6 +152,37 @@ public class MainViewController {
     void submitOrder(){
         storeOrders.add(myOrder);
         myOrder = new Order(storeOrders.getNextOrderNumber());
+    }
+
+    /**
+     * Receives edited order
+     * @param newOrder Edited order
+     */
+    void getOrder(Order newOrder){
+        myOrder = newOrder;
+    }
+
+    /**
+     * Receives edited store order
+     * @param newOrder Edited store order
+     */
+    void getStoreOrder(StoreOrders newOrder){
+        storeOrders = newOrder;
+    }
+
+    /**
+     * Passes myOrder
+     * @return myOrder
+     */
+    public Order passOrder(){
+        return myOrder;
+    }
+    /**
+     * Passes storeOrders
+     * @return storeOrders
+     */
+    public StoreOrders passStoreOrder(){
+        return storeOrders;
     }
 
 }
