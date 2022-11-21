@@ -57,9 +57,13 @@ public class StoreOrders implements Customizable{
      * @return True if successful, false otherwise
      */
     public boolean export(){
-        String storeOrders = "Today's orders:\n";
+        String storeOrders = "Today's orders:\n\n";
         for(Order order : orders){
-            storeOrders += order.toString() + "\n\n";
+            storeOrders += order.toString() + ":\n";
+            for(Pizza pizza : order.getOrderItems()){
+                storeOrders += "\t" + pizza.toString() + "\n";
+            }
+            storeOrders += "--------------------------------------------------------\n";
         }
         try {
             FileWriter writer = new FileWriter("storeOrders.txt");
