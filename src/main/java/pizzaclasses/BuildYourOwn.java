@@ -51,5 +51,17 @@ public class BuildYourOwn extends Pizza{
         }
         return BYO_SMALL_PRICE + toppingsCost;
     }
-
+    /**
+     * Overriden toString()
+     * @return String representation of pizza
+     */
+    @Override
+    public String toString() {
+        String output = this.getSize().getSize() + " Build Your Own Pizza On " + this.getCrust().getCrustType() + " Crust - ";
+        for(Topping topping : this.getToppings()){
+            output += topping.getTopping() + ", ";
+        }
+        output += String.valueOf(this.price());
+        return output;
+    }
 }

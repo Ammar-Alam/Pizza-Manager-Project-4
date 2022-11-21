@@ -46,4 +46,17 @@ public class Meatzza extends Pizza{
         }
         return MEATZZA_SMALL_PRICE;
     }
+    /**
+     * Overriden toString()
+     * @return String representation of pizza
+     */
+    @Override
+    public String toString() {
+        String output = this.getSize().getSize() + " Meatzza Pizza On " + this.getCrust().getCrustType() + " Crust - ";
+        for(Topping topping : this.getToppings()){
+            output += topping.getTopping() + ", ";
+        }
+        output += String.valueOf(this.price());
+        return output;
+    }
 }

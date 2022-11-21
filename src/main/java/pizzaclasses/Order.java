@@ -15,6 +15,15 @@ public class Order implements Customizable{
      * List of pizzas to order
      */
     private ArrayList<Pizza> orderItems = new ArrayList<>();
+    /**
+     * Value of subtotal of order
+     */
+    private double subtotal = 0.0;
+    /**
+     * Value of added sales tax only
+     */
+    private double tax = 0.0;
+    private static final double TAXRATE = 0.06625;
 
     /**
      * Constructor for order
@@ -47,6 +56,7 @@ public class Order implements Customizable{
      */
     @Override
     public boolean remove(Object obj) {
+        if(this.orderItems.isEmpty()) return false;
         if(obj instanceof Pizza && this.orderItems.contains((((Pizza) obj)))){
             this.orderItems.remove(obj);
             return true;
@@ -84,15 +94,43 @@ public class Order implements Customizable{
     }
 
     /**
+     * Getter for subtotal
+     * @return Subtotal value
+     */
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    /**
+     * Getter for tax value
+     * @return Tax value
+     */
+    public double getTax() {
+        return tax;
+    }
+
+    /**
+     * Calculates subtotal and tax
+     */
+    public void calculate(){
+        for(Pizza pizza : orderItems){
+            subtotal += pizza.price();
+        }
+        tax = subtotal * TAXRATE;
+    }
+
+    /**
+     * Removes all pizzas from the order
+     */
+    public void clearOrder(){
+        this.orderItems.clear();
+    }
+    /**
      * Creates string representation of order
      * @return Returns string form of order
      */
     @Override
     public String toString() {
-        String output = "Order number " + orderNum + "\n";
-        for(Pizza pizza : orderItems){
-            output += "\t" + pizza.toString() + "--------------------------------------------------\n";
-        }
-        return output;
+        return  "Order Number " + String.valueOf(orderNum);
     }
 }
