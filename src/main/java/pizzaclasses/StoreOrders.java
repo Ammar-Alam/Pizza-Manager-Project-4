@@ -21,6 +21,10 @@ public class StoreOrders implements Customizable{
      */
     @Override
     public boolean add(Object obj) {
+        if(obj instanceof Order){
+            this.orders.add((Order) obj);
+            return true;
+        }
         return false;
     }
     /**
@@ -31,6 +35,11 @@ public class StoreOrders implements Customizable{
      */
     @Override
     public boolean remove(Object obj) {
+        if(this.orders.isEmpty()) return false;
+        if(obj instanceof Order && this.orders.contains((((Order) obj)))){
+            this.orders.remove(obj);
+            return true;
+        }
         return false;
     }
 
@@ -61,5 +70,13 @@ public class StoreOrders implements Customizable{
             return false;
         }
         return true;
+    }
+
+    /**
+     * Getter for list of orders
+     * @return List of orders
+     */
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }
