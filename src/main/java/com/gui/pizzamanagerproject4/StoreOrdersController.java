@@ -80,6 +80,11 @@ public class StoreOrdersController implements Initializable {
     void exportOrders(ActionEvent event) {
         storeOrders.export();
     }
+
+    /**
+     * Changes list contents when swapping orders
+     * @param event Triggering event
+     */
     @FXML
     void changeList(ActionEvent event){
         if(orderNumberSelection.getSelectionModel().isEmpty()) return;
@@ -105,7 +110,7 @@ public class StoreOrdersController implements Initializable {
      * Gets store orders from main controller
      */
     void getStoreOrders(){
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root1 = (Parent) fxmlLoader.load();
         } catch (IOException e) {
@@ -119,7 +124,7 @@ public class StoreOrdersController implements Initializable {
      * Send updated store orders to main controller
      */
     void updateStoreOrders(){
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root1 = (Parent) fxmlLoader.load();
         } catch (IOException e) {

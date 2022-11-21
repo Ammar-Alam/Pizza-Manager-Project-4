@@ -59,7 +59,7 @@ public class MainViewController {
     @FXML
     void orderChicagoPizza(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("ChicagoStylePizzaOrderingView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ChicagoStylePizzaOrderingView.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order A Chicago Pizza");
@@ -80,7 +80,7 @@ public class MainViewController {
     @FXML
     void orderNYPizza(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("NYStylePizzaOrderingView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("NYStylePizzaOrderingView.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order A New York Pizza");
@@ -101,7 +101,7 @@ public class MainViewController {
     @FXML
     void viewOrder(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("CurrentOrderView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("CurrentOrderView.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Current Order");
@@ -124,7 +124,7 @@ public class MainViewController {
     @FXML
     void viewStoreOrders(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("StoreOrdersView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("StoreOrdersView.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Store Orders");

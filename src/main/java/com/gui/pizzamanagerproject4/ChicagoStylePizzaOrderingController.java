@@ -291,7 +291,7 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
         alert.setTitle("Added To Order");
         alert.setContentText("Your pizza has been added to your current order!");
         alert.showAndWait();
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root = (Parent) fxmlLoader.load();
             MainViewController controller = fxmlLoader.getController();

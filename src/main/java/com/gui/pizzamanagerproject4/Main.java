@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author Ammar A
  * @author Nikhil G
  */
-public class PizzaManagerMain extends Application {
+public class Main extends Application {
     /**
      * Start method for GUI
      * @param stage Stage
@@ -20,7 +20,7 @@ public class PizzaManagerMain extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("RU Pizza");
         stage.setResizable(false);

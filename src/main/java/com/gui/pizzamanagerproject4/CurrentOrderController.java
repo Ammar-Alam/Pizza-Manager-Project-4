@@ -104,7 +104,7 @@ public class CurrentOrderController implements Initializable {
             alert.showAndWait();
             return;
         }
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root1 = (Parent) fxmlLoader.load();
         } catch (IOException e) {
@@ -181,7 +181,7 @@ public class CurrentOrderController implements Initializable {
      * Gets order from main controller
      */
     void getOrder(){
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root1 = (Parent) fxmlLoader.load();
         } catch (IOException e) {
@@ -195,7 +195,7 @@ public class CurrentOrderController implements Initializable {
      * Sends modified order to main controller
      */
     void updateOrder(){
-        FXMLLoader fxmlLoader = new FXMLLoader(PizzaManagerMain.class.getResource("MainView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
         try {
             Parent root1 = (Parent) fxmlLoader.load();
         } catch (IOException e) {
