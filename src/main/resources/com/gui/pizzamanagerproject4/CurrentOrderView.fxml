@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.gui.pizzamanagerproject4.CurrentOrderController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.pizzamanagerproject4.CurrentOrderController">
+   <children>
+      <Label layoutX="226.0" layoutY="14.0" text="Current Order" textFill="#d01c1c" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ListView fx:id="orderListView" layoutX="16.0" layoutY="73.0" prefHeight="169.0" prefWidth="568.0" />
+      <HBox layoutX="16.0" layoutY="32.0" prefHeight="35.0" prefWidth="161.0">
+         <children>
+            <Label text="Order Number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="orderNumberDisplay" editable="false" prefHeight="27.0" prefWidth="40.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </TextField>
+         </children>
+      </HBox>
+      <VBox layoutX="14.0" layoutY="259.0" prefHeight="103.0" prefWidth="148.0">
+         <children>
+            <HBox prefHeight="33.0" prefWidth="148.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="76.0" text="Subtotal $" />
+                  <TextField fx:id="subtotalBox" editable="false" prefHeight="8.0" prefWidth="44.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="148.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="76.0" text="Sales Tax $" />
+                  <TextField fx:id="taxBox" editable="false" prefHeight="8.0" prefWidth="44.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="43.0" prefHeight="33.0" prefWidth="148.0">
+               <children>
+                  <Label prefHeight="24.0" prefWidth="76.0" text="Total $" />
+                  <TextField fx:id="totalBox" editable="false" prefHeight="8.0" prefWidth="44.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="280.0" layoutY="252.0" prefHeight="89.0" prefWidth="161.0">
+         <children>
+            <Button fx:id="placeOrderButton" mnemonicParsing="false" onAction="#placeOrder" text="Place Order!">
+               <VBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="removeSelectedPizzaButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removePizza" text="Remove Selected Pizza">
+               <VBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="clearOrderButton" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#clearOrder" text="Clear Order">
+               <VBox.margin>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.gui.pizzamanagerproject4.StoreOrdersController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.pizzamanagerproject4.StoreOrdersController">
+   <children>
+      <HBox layoutX="185.0" layoutY="345.0" prefHeight="41.0" prefWidth="231.0">
+         <children>
+            <Button fx:id="cancelOrderButton" mnemonicParsing="false" onAction="#cancelOrder" text="Cancel Order">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="exportOrdersButton" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#exportOrders" text="Export Store Orders">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="33.0" layoutY="30.0" prefHeight="41.0" prefWidth="534.0">
+         <children>
+            <Label text="Order Number">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="orderNumberSelection" onAction="#changeList" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Label text="Order Total">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="orderTotalText" editable="false">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <ListView fx:id="pizzaDisplayList" layoutX="19.0" layoutY="84.0" prefHeight="232.0" prefWidth="563.0" />
+   </children>
 </AnchorPane>
