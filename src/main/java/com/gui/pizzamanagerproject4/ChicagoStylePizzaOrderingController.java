@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import pizzaclasses.*;
 
 import java.io.IOException;
@@ -105,6 +107,11 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
     @FXML
     private TextField priceBox;
     /**
+     * Where pizza picture is displayed
+     */
+    @FXML
+    private ImageView displayPizza;
+    /**
      * Pizza being made
      */
     private Pizza pizza;
@@ -178,6 +185,7 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
         resetToppings();
         switch (pizzaFlavorSelection.getSelectionModel().getSelectedItem()){
             case "Build your own" -> {
+                displayPizza.setImage(new Image("@../../../images/chicagoSylePizzaCustom.jpg"));
                 availableToppings.setDisable(false);
                 selectedToppings.setDisable(false);
                 addToppingButton.setDisable(false);
@@ -197,6 +205,7 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setBBQChicken(){
+        displayPizza.setImage(new Image("@../../../images/chicagoSylePizzaCustom.jpg"));
         crustTypeDisplay.setText(Crust.THIN.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.BBQ_CHICKEN.getTopping());
@@ -219,6 +228,8 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setMeatzza(){
+        displayPizza.setImage(new Image("@../../../images/chicagoSylePizzaMeatzza.jpg"));
+
         crustTypeDisplay.setText(Crust.HAND_TOSSED.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.SAUSAGE.getTopping());
@@ -241,6 +252,8 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      */
     @FXML
     void setDeluxe(){
+        displayPizza.setImage(new Image("@../../../images/chicagoSylePizzaDeluxe.jpg"));
+
         crustTypeDisplay.setText(Crust.BROOKLYN.getCrustType()); // set crust
         //set toppings
         selectedToppings.getItems().add(Topping.SAUSAGE.getTopping());
