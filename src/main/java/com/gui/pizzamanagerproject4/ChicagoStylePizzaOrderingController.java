@@ -44,55 +44,46 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      * Pizza factory
      */
     private ChicagoPizza pizzaFactory = new ChicagoPizza();
-
     /**
      * Listview displaying toppings available to add
      */
     @FXML
     private ListView<String> availableToppings;
-
     /**
      * Textfield displaying crust type
      */
     @FXML
     private TextField crustTypeDisplay;
-
     /**
      * Large crust button
      */
     @FXML
     private RadioButton largeCrust;
-
     /**
      * Medium crust button
      */
     @FXML
     private RadioButton medCrust;
-
     /**
      * Combobox for selecting pizza flavors
      */
     @FXML
     private ComboBox<String> pizzaFlavorSelection;
-
     /**
      * Listview displaying selected toppings
      */
     @FXML
     private ListView<String> selectedToppings;
-
     /**
      * Pizza crust size toggle group
      */
     @FXML
     private ToggleGroup size;
-
     /**
      * Small crust button
      */
     @FXML
     private RadioButton smallCrust;
-
     /**
      * Button to add a selected topping
      */
@@ -103,7 +94,6 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      */
     @FXML
     private Button removeToppingButton;
-
     /**
      * Button to add current pizza to order
      */
@@ -118,8 +108,6 @@ public class ChicagoStylePizzaOrderingController implements Initializable {
      * Pizza being made
      */
     private Pizza pizza;
-
-
     /**
      * Initialization method for setting contents of all options to a small build your own pizza with no toppings
      * @param url URL
